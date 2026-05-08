@@ -10,9 +10,11 @@ const CurrentlyBuilding = () => {
 
       <div className="mt-6">
         <p className="text-sm">
-          I’m currently building and optimizing the Macoleen’s Pharmacy system,
-          achieving ~30% faster page load times through improved query
-          efficiency, caching, and state management.
+          I am currently building the NMI Systems monorepo, centralizing Patient
+          Information, Laboratory, Pharmacy, and Billing modules. By
+          implementing a shared logic architecture, I’ve reduced code
+          duplication by 40% and optimized cross-module data flow, resulting in
+          30% faster automated billing cycles.
         </p>
       </div>
     </div>

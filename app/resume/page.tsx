@@ -25,7 +25,7 @@ const page = () => {
       <main className=" flex items-center justify-center mt-8">
         <Image
           alt="resume"
-          src="/resume.jpg"
+          src="/resume.png"
           width={700}
           height={700}
           className="border rounded-lg shadow-lg"
