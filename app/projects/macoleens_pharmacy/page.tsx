@@ -253,8 +253,30 @@ const MacoleensPharmacy = () => {
               View Application
             </a>
           </p>
-          <p className="text-sm text-gray-500 italic">
-            * Demo credentials available upon request
+          <p className="font-semibold">Accounts:</p>
+          <p className="font-semibold">
+            Manager:{" "}
+            <span className="font-normal">
+              jelmarrapis47@gmail.com pass:jelmar123
+            </span>
+          </p>
+          <p className="font-semibold">
+            Nurse:{" "}
+            <span className="font-normal">
+              jelmarrapis46@gmail.com pass:jelmar123
+            </span>
+          </p>
+          <p className="font-semibold">
+            Pharmacist:{" "}
+            <span className="font-normal">
+              jelmarrapis63@gmail.com pass:jelmar123
+            </span>
+          </p>
+          <p className="font-semibold">
+            Cashier:{" "}
+            <span className="font-normal">
+              shyzen8@gmail.com pass:jelmar123
+            </span>
           </p>
         </div>
       </footer>
