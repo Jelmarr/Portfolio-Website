@@ -13,7 +13,7 @@ const socialLinks = [
     icon: <FaLinkedin />,
     href: "//www.linkedin.com/in/jelmar-rapis-b771b23a2",
   },
-  { label: "Github", icon: <SiGithub />, href: "https://github.com/Shyzenn" },
+  { label: "Github", icon: <SiGithub />, href: "https://github.com/Jelmarr" },
   {
     label: "Instagram",
     icon: <FaInstagram />,
