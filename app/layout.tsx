@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${roboto.variable} antialiased max-w-230 mx-auto min-h-screen font-sans px-4`}
+        className={`${roboto.variable} antialiased max-w-4xl mx-auto min-h-screen font-sans px-4`}
       >
         <ThemeProvider>
           {children}

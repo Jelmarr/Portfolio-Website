@@ -9,6 +9,7 @@ import RecentProjects from "./components/RecentProjects";
 import SideBar from "./components/SideBar";
 import TechStack from "./components/TechStack";
 import Article from "./components/ui/Article";
+import Hero from "./components/Hero";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -25,18 +26,7 @@ export default function Home() {
         variants={fadeUp}
         transition={{ duration: 0.6 }}
       >
-        <aside className="border rounded-lg p-4">
-          <SideBar />
-        </aside>
-
-        <section className="flex flex-col gap-4">
-          <Article>
-            <About />
-          </Article>
-          <Article>
-            <RecentProjects />
-          </Article>
-        </section>
+        <Hero />
       </motion.div>
 
       <motion.div
