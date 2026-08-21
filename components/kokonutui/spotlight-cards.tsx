@@ -49,7 +49,7 @@ const DEFAULT_ITEMS: SpotlightItem[] = [
       },
       {
         id: 4,
-        name: "Postgresql",
+        name: "PostgreSQL",
         image:
           "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       },

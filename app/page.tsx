@@ -12,6 +12,8 @@ import Article from "./components/ui/Article";
 import Hero from "./components/Hero";
 import SpotlightCards from "@/components/kokonutui/spotlight-cards";
 import Scales, { ScalesContainer } from "@/components/ui/scales";
+import CardStack from "@/components/CardStack";
+import DarkModeToggle from "./components/ui/DarkModeToggle";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -46,7 +48,9 @@ export default function Home() {
           <p>
             - <span className="text-xl font-semibold">Projects</span>
           </p>
-          <SpotlightCards />
+          <div className="mt-14">
+            <CardStack />
+          </div>
         </div>
       </motion.div>
 
