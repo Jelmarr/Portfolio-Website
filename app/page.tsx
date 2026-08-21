@@ -10,6 +10,8 @@ import SideBar from "./components/SideBar";
 import TechStack from "./components/TechStack";
 import Article from "./components/ui/Article";
 import Hero from "./components/Hero";
+import SpotlightCards from "@/components/kokonutui/spotlight-cards";
+import Scales, { ScalesContainer } from "@/components/ui/scales";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,16 +22,35 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-4">
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 py-8"
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4"
         initial="hidden"
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6 }}
       >
         <Hero />
+
+        <div className="relative mt-8 h-6 w-full col-span-full mask-[linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)]">
+          <ScalesContainer containerClassName="h-full w-full" />
+        </div>
       </motion.div>
 
       <motion.div
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 py-8"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className="col-span-full">
+          <p>
+            - <span className="text-xl font-semibold">Projects</span>
+          </p>
+          <SpotlightCards />
+        </div>
+      </motion.div>
+
+      {/* <motion.div
         className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-4"
         initial="hidden"
         animate="visible"
@@ -48,7 +69,7 @@ export default function Home() {
         <aside className="border rounded-lg p-4 dark:bg-gray-950">
           <Education />
         </aside>
-      </motion.div>
+      </motion.div> */}
 
       <motion.section
         className="border rounded-lg p-4 dark:bg-gray-950"

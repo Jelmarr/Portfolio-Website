@@ -1,7 +1,7 @@
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 import ScaleImage from "./ScaleImage";
 import { FaGithub } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
+import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import Magnet from "@/components/Magnet";
 import Link from "next/link";
@@ -13,14 +13,14 @@ const Hero = () => {
     <section className="col-span-full w-full">
       <div className="flex flex-col sm:flex-row w-full items-center">
         <ScaleImage />
-        <div className="min-w-0 flex-1 flex flex-col gap-4 mt-4">
+        <div className="min-w-0 flex-1 flex flex-col gap-4 mt-4 sm:mt-0">
           <LayoutTextFlip
             text="Jelmar Rapis"
             words={[
               "Web Developer",
               "Software Engineer",
-              "Front End Developer",
-              "Back End Developer",
+              "Front End Enginner",
+              "Back End Enginner",
             ]}
           />
 
@@ -32,7 +32,7 @@ const Hero = () => {
             </Link>
             <Link href={""}>
               <Magnet>
-                <CiLinkedin />
+                <FaLinkedin />
               </Magnet>
             </Link>
 
