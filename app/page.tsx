@@ -16,6 +16,8 @@ import CardStack from "@/components/CardStack";
 import DarkModeToggle from "./components/ui/DarkModeToggle";
 import InternshipDetailts from "./components/InternshipDetailts";
 import LoopingLogo from "./components/LoopingLogo";
+import { GitHubCalendar } from "react-github-calendar";
+import GitHubActivity from "./components/GithubActivity";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -86,6 +88,40 @@ export default function Home() {
           </p>
           <div className="mt-14">
             <LoopingLogo />
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 mb-20"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <div className="col-span-full">
+          <p>
+            - <span className="text-xl font-semibold">Education</span>
+          </p>
+          <div className="mt-14">
+            <Education />
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 mb-20"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <div className="col-span-full">
+          <p>
+            - <span className="text-xl font-semibold">Github</span>
+          </p>
+          <div className="mt-14">
+            <GitHubActivity />
           </div>
         </div>
       </motion.div>

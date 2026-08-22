@@ -11,40 +11,37 @@ const LoopingLogo = () => {
       {/* Basic horizontal loop */}
       <LogoLoop
         logos={frontEndLogos}
-        speed={100}
+        speed={50}
         direction="left"
         logoHeight={40}
         gap={60}
         hoverSpeed={0}
         scaleOnHover
         fadeOut
-        fadeOutColor="#ffffff"
         ariaLabel="Frontend"
       />
 
       <LogoLoop
         logos={backEndLogos}
-        speed={100}
+        speed={50}
         direction="right"
         logoHeight={40}
         gap={60}
         hoverSpeed={0}
         scaleOnHover
         fadeOut
-        fadeOutColor="#ffffff"
         ariaLabel="Backend"
       />
 
       <LogoLoop
         logos={toolsLogo}
-        speed={100}
+        speed={50}
         direction="left"
         logoHeight={40}
         gap={60}
         hoverSpeed={0}
         scaleOnHover
         fadeOut
-        fadeOutColor="#ffffff"
         ariaLabel="Tools"
       />
     </div>

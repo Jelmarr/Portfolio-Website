@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./components/theme-provider";
-import Link from "next/link";
+import { ToggleTheme } from "@/components/lightswind/toggle-theme";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -25,20 +24,13 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased max-w-4xl mx-auto min-h-screen font-sans px-4`}
       >
-        <ThemeProvider>
-          {children}
-          <footer className="border-t mt-18 flex items-center justify-center pt-8 pb-4">
-            <p className="text-sm font-medium flex flex-col items-center gap-2">
-              © 2026 Jelmar Rapis. All rights reserved.
-              <span className="font-normal">
-                This portfolio website is inspired by{" "}
-                <Link href="https://bryllim.com/" className="underline">
-                  Bryl Lim.
-                </Link>
-              </span>
-            </p>
-          </footer>
-        </ThemeProvider>
+        <ToggleTheme duration={600} animationType="diag-down-right" />
+        {children}
+        <footer className="border-t mt-18 flex items-center justify-center pt-8 pb-4">
+          <p className="text-sm font-medium flex flex-col items-center gap-2">
+            © 2026 Jelmar Rapis. All rights reserved.
+          </p>
+        </footer>
       </body>
     </html>
   );

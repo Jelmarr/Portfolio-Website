@@ -1,11 +1,15 @@
 "use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { ToggleTheme } from "@/components/lightswind/toggle-theme";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
-    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+    <ToggleTheme
+      duration={600}
+      animationType="diag-down-right"
+      className="bg-gray-100 dark:bg-gray-700"
+    >
       {children}
-    </NextThemesProvider>
+    </ToggleTheme>
   );
 }
