@@ -33,6 +33,7 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6 }}
+        id="home"
       >
         <Hero />
 
@@ -47,6 +48,7 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6, delay: 0.2 }}
+        id="projects"
       >
         <div className="col-span-full">
           <p>
@@ -64,6 +66,7 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6, delay: 0.4 }}
+        id="internship"
       >
         <div className="col-span-full">
           <p>
@@ -81,6 +84,7 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6, delay: 0.4 }}
+        id="technologies"
       >
         <div className="col-span-full">
           <p>
@@ -98,6 +102,7 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6, delay: 0.6 }}
+        id="education"
       >
         <div className="col-span-full">
           <p>
@@ -115,6 +120,7 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6, delay: 0.6 }}
+        id="github"
       >
         <div className="col-span-full">
           <p>

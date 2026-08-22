@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ToggleTheme } from "@/components/lightswind/toggle-theme";
+import SideBar from "./components/SideBar";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -21,16 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${roboto.variable} antialiased max-w-4xl mx-auto min-h-screen font-sans px-4`}
-      >
-        <ToggleTheme duration={600} animationType="diag-down-right" />
-        {children}
-        <footer className="border-t mt-18 flex items-center justify-center pt-8 pb-4">
-          <p className="text-sm font-medium flex flex-col items-center gap-2">
-            © 2026 Jelmar Rapis. All rights reserved.
-          </p>
-        </footer>
+      <body className={`${roboto.variable} antialiased relative`}>
+        <SideBar />
+        <div className="max-w-4xl mx-auto min-h-screen font-sans px-4 my-6">
+          {children}
+        </div>
       </body>
     </html>
   );
