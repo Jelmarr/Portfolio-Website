@@ -14,6 +14,8 @@ import SpotlightCards from "@/components/kokonutui/spotlight-cards";
 import Scales, { ScalesContainer } from "@/components/ui/scales";
 import CardStack from "@/components/CardStack";
 import DarkModeToggle from "./components/ui/DarkModeToggle";
+import InternshipDetailts from "./components/InternshipDetailts";
+import LoopingLogo from "./components/LoopingLogo";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,9 +24,9 @@ export const fadeUp = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-4">
+    <main className="flex flex-col">
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4"
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 mb-20"
         initial="hidden"
         animate="visible"
         variants={fadeUp}
@@ -38,7 +40,7 @@ export default function Home() {
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 py-8"
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 mb-30"
         initial="hidden"
         animate="visible"
         variants={fadeUp}
@@ -50,6 +52,40 @@ export default function Home() {
           </p>
           <div className="mt-14">
             <CardStack />
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 mb-20"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <div className="col-span-full">
+          <p>
+            - <span className="text-xl font-semibold">Internship</span>
+          </p>
+          <div className="mt-14">
+            <InternshipDetailts />
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4 mb-20"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <div className="col-span-full">
+          <p>
+            - <span className="text-xl font-semibold">Technologies</span>
+          </p>
+          <div className="mt-14">
+            <LoopingLogo />
           </div>
         </div>
       </motion.div>
@@ -75,7 +111,7 @@ export default function Home() {
         </aside>
       </motion.div> */}
 
-      <motion.section
+      {/* <motion.section
         className="border rounded-lg p-4 dark:bg-gray-950"
         initial="hidden"
         animate="visible"
@@ -83,7 +119,7 @@ export default function Home() {
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <Contact />
-      </motion.section>
+      </motion.section> */}
     </main>
   );
 }
