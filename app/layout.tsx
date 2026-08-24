@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import SideBar from "./components/SideBar";
+import NavBar from "./components/NavBar";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -22,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${roboto.variable} antialiased relative`}>
-        <SideBar />
-        <div className="max-w-4xl mx-auto min-h-screen font-sans px-4 my-6">
+        <div className="max-w-5xl mx-auto sticky top-0 z-40">
+          <NavBar />
+        </div>
+        <div className="max-w-4xl mx-auto min-h-screen px-4 mb-6">
           {children}
         </div>
       </body>
