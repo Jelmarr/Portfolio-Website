@@ -6,7 +6,6 @@ import { IoMdMail } from "react-icons/io";
 import Magnet from "@/components/Magnet";
 import Link from "next/link";
 import { MagneticButton } from "@/components/ui/magnetic-button";
-import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
@@ -43,9 +42,14 @@ const Hero = () => {
             </Link>
           </div>
 
-          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            I&apos;m a full stack developer building websites using React,
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground ">
+            I&apos;m a full stack engineer. I build modern websites using React,
             Next.js, .Net and Postgresql.
+          </p>
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Currently enhancing my tech skills through hands-on projects and
+            continuous learning. I love shaping ideas into real projects that
+            deliver results.
           </p>
 
           <div className="sm:w-fit">

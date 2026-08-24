@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
+const inter = Inter({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
+});
+
+const jetBrains = Space_Grotesk({
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  variable: "--font-jet-brains",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.variable} antialiased relative`}>
+      <body
+        className={`${inter.variable} ${jetBrains.variable} antialiased relative`}
+      >
         <div className="max-w-5xl mx-auto sticky top-0 z-40">
           <NavBar />
         </div>

@@ -33,7 +33,6 @@ export default function Home() {
         animate="visible"
         variants={fadeUp}
         transition={{ duration: 0.6 }}
-        id="home"
       >
         <Hero />
 
@@ -52,7 +51,9 @@ export default function Home() {
       >
         <div className="col-span-full">
           <p>
-            - <span className="text-xl font-semibold">Projects</span>
+            <span className="text-lg font-semibold font-(family-name:--font-jet-brains) tracking-widest lowercase text-muted-foreground">
+              Projects
+            </span>
           </p>
           <div className="mt-14">
             <CardStack />
@@ -70,7 +71,9 @@ export default function Home() {
       >
         <div className="col-span-full">
           <p>
-            - <span className="text-xl font-semibold">Internship</span>
+            <span className="text-lg font-semibold font-(family-name:--font-jet-brains) tracking-widest lowercase text-muted-foreground">
+              Internship
+            </span>
           </p>
           <div className="mt-14">
             <InternshipDetailts />
@@ -88,7 +91,9 @@ export default function Home() {
       >
         <div className="col-span-full">
           <p>
-            - <span className="text-xl font-semibold">Technologies</span>
+            <span className="text-lg font-semibold font-(family-name:--font-jet-brains) tracking-widest lowercase text-muted-foreground">
+              Technologies
+            </span>
           </p>
           <div className="mt-14">
             <LoopingLogo />
@@ -106,7 +111,9 @@ export default function Home() {
       >
         <div className="col-span-full">
           <p>
-            - <span className="text-xl font-semibold">Education</span>
+            <span className="text-lg font-semibold font-(family-name:--font-jet-brains) tracking-widest lowercase text-muted-foreground">
+              Education
+            </span>
           </p>
           <div className="mt-14">
             <Education />
@@ -124,7 +131,9 @@ export default function Home() {
       >
         <div className="col-span-full">
           <p>
-            - <span className="text-xl font-semibold">Github</span>
+            <span className="text-lg font-semibold font-(family-name:--font-jet-brains) tracking-widest lowercase text-muted-foreground">
+              Github
+            </span>
           </p>
           <div className="mt-14">
             <GitHubActivity />

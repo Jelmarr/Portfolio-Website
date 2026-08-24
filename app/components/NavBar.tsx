@@ -41,6 +41,8 @@ const NavBar = () => {
     setIsOpen(false);
     if (id.startsWith("mailto:") || id.startsWith("http")) {
       window.open(id, "_blank");
+    } else if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       handleItemClick(id);
     }
@@ -106,8 +108,15 @@ const NavBar = () => {
   );
 
   return (
-    <header className="flex p-4 bg-white/10 dark:bg-neutral-900/30 backdrop-blur-md border-white/20 dark:border-white/10 justify-between items-center mb-20">
-      <p className="text-sm font-medium tracking-tight">Logo</p>
+    <header
+      className="flex p-4 bg-white/10 dark:bg-neutral-900/30 backdrop-blur-md border-white/20 dark:border-white/10 justify-between items-center mb-20"
+      id="home"
+    >
+      <button onClick={() => goTo("home")}>
+        <p className="text-lg font-bold tracking-widest font-(family-name:--font-jet-brains) cursor-pointer">
+          JR
+        </p>
+      </button>
 
       <div className="hidden md:flex items-center gap-8">
         <nav>
