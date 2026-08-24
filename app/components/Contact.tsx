@@ -1,84 +1,56 @@
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
-import LinkButton from "./ui/LinkButton";
-import { SiGithub } from "react-icons/si";
-import { IoShareSocialOutline } from "react-icons/io5";
-import { HiOutlineLightningBolt } from "react-icons/hi";
-import { LuMail } from "react-icons/lu";
+import { Mail } from "lucide-react";
 import Link from "next/link";
-import { FiFileText } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa6";
 
-const socialLinks = [
+const CONTACT_ITEMS = [
   {
-    label: "Linkedin",
-    icon: <FaLinkedin />,
-    href: "//www.linkedin.com/in/jelmar-rapis-b771b23a2",
+    label: "Email",
+    value: "jelmarrapis@gmail.com",
+    href: "mailto:jelmarrapis@gmail.com",
+    icon: Mail,
   },
-  { label: "Github", icon: <SiGithub />, href: "https://github.com/Jelmarr" },
   {
-    label: "Instagram",
-    icon: <FaInstagram />,
-    href: "https://www.instagram.com/jelmar27/",
+    label: "LinkedIn",
+    value: "www.linkedin.com/in/jelmar-rapis",
+    href: "https://www.linkedin.com/in/jelmar-rapis",
+    icon: FaLinkedin,
   },
 ];
 
 const Contact = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
-      {/* What I Can Help With */}
-      <div className="w-full md:w-auto md:flex-1">
-        <h5 className="flex items-center gap-1 font-medium">
-          <HiOutlineLightningBolt className="text-sm text-gray-500" />
-          What I Can Help With
-        </h5>
-        <ul className="border dark:border-white rounded-md text-xs flex flex-col gap-2 p-3.5 list-disc list-inside mt-2">
-          <li>Build full-stack CRUD systems</li>
-          <li>Optimize database queries & performance</li>
-          <li>Design clean, responsive UIs</li>
-          <li>Integrate authentication & secure APIs</li>
-        </ul>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="contact">
+      <p className="text-sm leading-relaxed text-muted-foreground">
+        Have a project in mind or just want to connect? Reach out through email
+        or LinkedIn — I&apos;m always open to new opportunities and
+        conversations.
+      </p>
 
-      {/* Social Links */}
-      <div className="w-full md:w-auto md:flex-initial flex flex-col gap-2">
-        <h5 className="flex items-center gap-1 font-medium">
-          <IoShareSocialOutline className="text-sm text-gray-500" />
-          Social Links
-        </h5>
-        {socialLinks.map((item, index) => {
+      <div className="flex flex-col gap-4">
+        {CONTACT_ITEMS.map((item) => {
+          const Icon = item.icon;
           return (
-            <div className="" key={index}>
-              <LinkButton
-                href={item.href}
-                newTab
-                label={item.label}
-                icon={item.icon}
-                classname="py-1 w-full md:w-52 px-2 text-xs"
-                iconClassName="text-2xl text-gray-800 dark:text-gray-300"
-              />
-            </div>
+            <Link
+              key={item.label}
+              href={item.href}
+              target={item.label === "LinkedIn" ? "_blank" : undefined}
+              rel={
+                item.label === "LinkedIn" ? "noreferrer noopener" : undefined
+              }
+              className="group flex items-center gap-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900/50 p-4 transition-colors hover:border-neutral-300 dark:hover:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-900"
+            >
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-200 dark:bg-neutral-800">
+                <Icon className="h-4 w-4 text-neutral-600 dark:text-neutral-300" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-sm font-medium">{item.label}</p>
+                <p className="truncate text-sm text-muted-foreground">
+                  {item.value}
+                </p>
+              </div>
+            </Link>
           );
         })}
-      </div>
-
-      <div className="w-full md:w-auto md:flex-1 flex flex-col gap-5 mt-2 md:mt-7">
-        <Link
-          href="mailto:jelmarrapis@gmail.com"
-          className="border flex dark:border-white py-2 rounded-md px-2 transition-transform duration-300 hover:-translate-y-1"
-        >
-          <p className="text-xs flex flex-col gap-1">
-            <span className="flex items-center gap-1">
-              <LuMail className="text-lg" /> Email
-            </span>
-            jelmarrapis@gmail.com
-          </p>
-        </Link>
-        <Link
-          href="/resume"
-          className="border flex items-center gap-2 dark:border-white rounded-md transition-transform duration-300 hover:-translate-y-1 p-3 text-sm"
-        >
-          <FiFileText />
-          View Resume
-        </Link>
       </div>
     </div>
   );

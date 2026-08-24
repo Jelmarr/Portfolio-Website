@@ -18,6 +18,7 @@ import InternshipDetailts from "./components/InternshipDetailts";
 import LoopingLogo from "./components/LoopingLogo";
 import { GitHubCalendar } from "react-github-calendar";
 import GitHubActivity from "./components/GithubActivity";
+import ScaleSeparator from "./components/ScaleSeparator";
 
 export const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -36,9 +37,7 @@ export default function Home() {
       >
         <Hero />
 
-        <div className="relative mt-8 h-6 w-full col-span-full mask-[linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)]">
-          <ScalesContainer containerClassName="h-full w-full" />
-        </div>
+        <ScaleSeparator />
       </motion.div>
 
       <motion.div
@@ -141,36 +140,27 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* <motion.div
-        className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-4"
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-4"
         initial="hidden"
         animate="visible"
         variants={fadeUp}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        id="github"
       >
-        <section className="flex flex-col gap-4">
-          <Article>
-            <TechStack />
-          </Article>
-          <Article>
-            <CurrentlyBuilding />
-          </Article>
-        </section>
+        <div className="col-span-full">
+          <p>
+            <span className="text-lg font-semibold font-(family-name:--font-jet-brains) tracking-widest lowercase text-muted-foreground">
+              get in touch
+            </span>
+          </p>
+          <div className="mt-14">
+            <Contact />
+          </div>
+        </div>
+      </motion.div>
 
-        <aside className="border rounded-lg p-4 dark:bg-gray-950">
-          <Education />
-        </aside>
-      </motion.div> */}
-
-      {/* <motion.section
-        className="border rounded-lg p-4 dark:bg-gray-950"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <Contact />
-      </motion.section> */}
+      <ScaleSeparator />
     </main>
   );
 }
