@@ -16,10 +16,7 @@ const Magnet = ({
   const magnetRef = useRef(null);
 
   useEffect(() => {
-    if (disabled) {
-      setPosition({ x: 0, y: 0 });
-      return;
-    }
+    if (disabled) return; // no setState here anymore — just skip subscribing
 
     const handleMouseMove = e => {
       if (!magnetRef.current) return;
@@ -51,6 +48,10 @@ const Magnet = ({
 
   const transitionStyle = isActive ? activeTransition : inactiveTransition;
 
+  // Derived, not stored: when disabled, always render at rest —
+  // regardless of whatever `position` last held before disabling.
+  const effectivePosition = disabled ? { x: 0, y: 0 } : position;
+
   return (
     <div
       ref={magnetRef}
@@ -61,7 +62,7 @@ const Magnet = ({
       <div
         className={innerClassName}
         style={{
-          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+          transform: `translate3d(${effectivePosition.x}px, ${effectivePosition.y}px, 0)`,
           transition: transitionStyle,
           willChange: 'transform'
         }}

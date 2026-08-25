@@ -1,29 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import About from "./components/About";
 import Contact from "./components/Contact";
-import CurrentlyBuilding from "./components/CurrentlyBuilding";
 import Education from "./components/Education";
-import RecentProjects from "./components/RecentProjects";
-import SideBar from "./components/SideBar";
-import TechStack from "./components/TechStack";
-import Article from "./components/ui/Article";
 import Hero from "./components/Hero";
-import SpotlightCards from "@/components/kokonutui/spotlight-cards";
-import Scales, { ScalesContainer } from "@/components/ui/scales";
 import CardStack from "@/components/CardStack";
-import DarkModeToggle from "./components/ui/DarkModeToggle";
 import InternshipDetailts from "./components/InternshipDetailts";
 import LoopingLogo from "./components/LoopingLogo";
-import { GitHubCalendar } from "react-github-calendar";
 import GitHubActivity from "./components/GithubActivity";
 import ScaleSeparator from "./components/ScaleSeparator";
-
-export const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
+import { fadeUp } from "@/lib/animation";
 
 export default function Home() {
   return (

@@ -9,7 +9,6 @@ import {
   DialogTrigger,
   DialogContent,
   DialogHeader,
-  DialogFooter,
   DialogTitle,
   DialogDescription,
 } from "@/components/lightswind/dialog";
