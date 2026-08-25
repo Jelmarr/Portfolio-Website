@@ -54,9 +54,14 @@ const Hero = () => {
 
           <div className="sm:w-fit">
             <MagneticButton>
-              <button className="bg-black text-white text-sm px-4 py-1.5 rounded-md hover:bg-gray-800 dark:bg-white dark:text-black font-semibold dark:hover:bg-gray-100 cursor-pointer">
+              <Link
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="bg-black text-white text-sm px-4 py-1.5 rounded-md hover:bg-gray-800 dark:bg-white dark:text-black font-semibold dark:hover:bg-gray-100 cursor-pointer"
+              >
                 View Resume
-              </button>
+              </Link>
             </MagneticButton>
           </div>
         </div>
