@@ -20,7 +20,7 @@ const ScaleImage = () => {
         <div className="relative z-10 h-full w-full overflow-hidden rounded-md bg-white shadow-sm ring-1 shadow-black/10 ring-black/5 dark:bg-neutral-800">
           <Image
             fill
-            src="/kld-picture.jpg"
+            src="/portfolio-image.png"
             alt="Portrait"
             className="h-full w-full object-cover filter"
           />
