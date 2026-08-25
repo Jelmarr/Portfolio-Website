@@ -2,8 +2,17 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, Check, ExternalLink, Hammer } from "lucide-react";
 import { CARD_STACK } from "@/lib/constant/card-stack";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/lightswind/dialog";
 import Link from "next/link";
 
 const RESTING_SLOTS = [
@@ -112,13 +121,22 @@ export default function CardStack() {
                   : "var(--cs-shadow-idle)",
               }}
             >
-              <div className="border relative h-40 mb-4 rounded-md">
-                <Image
-                  src={card.imageUrl}
-                  alt="project-img"
-                  fill
-                  className="object-contain w-full h-full"
-                />
+              <div className="border relative h-40 mb-4 rounded-md overflow-hidden">
+                {card.dev ? (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gray-100 dark:bg-neutral-800/50 text-neutral-500 dark:text-neutral-400">
+                    <Hammer className="h-5 w-5" />
+                    <p className="text-xs font-medium tracking-wide">
+                      In Development
+                    </p>
+                  </div>
+                ) : (
+                  <Image
+                    src={card.imageUrl ?? ""}
+                    alt="project-img"
+                    fill
+                    className="object-contain w-full h-full"
+                  />
+                )}
               </div>
 
               <div
@@ -142,17 +160,7 @@ export default function CardStack() {
                 </h3>
               </div>
 
-              <p
-                style={{
-                  color: "var(--cs-desc-text)",
-                  fontSize: 13,
-                  lineHeight: 1.5,
-                  margin: 0,
-                  fontFamily: "'Inter', -apple-system, sans-serif",
-                }}
-              >
-                {card.desc}
-              </p>
+              <p className="text-muted-foreground text-xs m-0 ">{card.desc}</p>
 
               {isActive && (
                 <motion.div
@@ -164,9 +172,90 @@ export default function CardStack() {
                   <div className="flex flex-row items-center w-full">
                     <AnimatedTooltip items={card.techStacks} />
                   </div>
-                  <Link href="#">
-                    <ExternalLink className="text-muted-foreground hover:text-black transition-transform duration-300 hover:translate-x-0.5 hover:-translate-y-0.5" />
-                  </Link>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        className="text-sm cursor-pointer flex items-center gap-2 font-medium group text-muted-foreground hover:text-white"
+                        disabled={card.dev}
+                      >
+                        View
+                        <ArrowRight
+                          size={13}
+                          className="mt-0.5 group-hover:translate-x-1 transition-transform duration-300"
+                        />
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-xl">
+                      <DialogHeader className="border-b pb-4">
+                        <div className="relative h-80 my-4 rounded-md overflow-hidden">
+                          <Image
+                            alt="project-image"
+                            src={card.imageUrl ?? ""}
+                            fill
+                            className="object-contain w-full h-full"
+                          />
+                        </div>
+                        <DialogTitle className="my-4">{card.title}</DialogTitle>
+                        <DialogDescription>{card.desc}</DialogDescription>
+                      </DialogHeader>
+                      <div className="my-4 border-b pb-4">
+                        <h3 className="font-semibold mb-3">Key Features</h3>
+                        {card.features &&
+                        card.features.length > 0 &&
+                        card.features[0].name ? (
+                          <ul className="space-y-2">
+                            {card.features.map((feature) => (
+                              <li
+                                key={feature.id}
+                                className="flex items-start gap-2 text-sm text-muted-foreground"
+                              >
+                                <Check
+                                  size={14}
+                                  className="mt-0.5 shrink-0 text-neutral-500 dark:text-neutral-400"
+                                />
+                                <span>{feature.name}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-sm text-muted-foreground">
+                            Coming soon.
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-4">Links</h3>
+                        <Link
+                          href={card.link}
+                          target="_blank"
+                          className="flex items-center gap-2 group cursor-pointer"
+                        >
+                          <p>Demo</p>
+                          <ExternalLink
+                            size={15}
+                            className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+                          />
+                        </Link>
+                        {card.id == "pharmacy" && (
+                          <div>
+                            <h3 className="font-semibold mt-4">Account Demo</h3>
+                            <p className="text-sm mt-2 text-muted-foreground">
+                              Manager: jelmarrapis47@gmail.com pass:jelmar123
+                            </p>
+                            <p className="text-sm mt-2 text-muted-foreground">
+                              Nurse: jelmarrapis46@gmail.com pass:jelmar123
+                            </p>
+                            <p className="text-sm mt-2 text-muted-foreground">
+                              Pharmacist: jelmarrapis63@gmail.com pass:jelmar123
+                            </p>
+                            <p className="text-sm mt-2 text-muted-foreground">
+                              Cashier: shyzen8gmail.com pass:jelmar123
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </motion.div>
               )}
             </div>
