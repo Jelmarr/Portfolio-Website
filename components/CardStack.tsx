@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-import { ArrowRight, Check, ExternalLink, Hammer } from "lucide-react";
+import { ArrowRight, Check, ExternalLink } from "lucide-react";
 import { CARD_STACK } from "@/lib/constant/card-stack";
 import {
   Dialog,
@@ -121,21 +121,12 @@ export default function CardStack() {
               }}
             >
               <div className="border relative h-40 mb-4 rounded-md overflow-hidden">
-                {card.dev ? (
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gray-100 dark:bg-neutral-800/50 text-neutral-500 dark:text-neutral-400">
-                    <Hammer className="h-5 w-5" />
-                    <p className="text-xs font-medium tracking-wide">
-                      In Development
-                    </p>
-                  </div>
-                ) : (
-                  <Image
-                    src={card.imageUrl ?? ""}
-                    alt="project-img"
-                    fill
-                    className="object-contain w-full h-full"
-                  />
-                )}
+                <Image
+                  src={card.imageUrl ?? ""}
+                  alt="project-img"
+                  fill
+                  className="object-cover w-full h-full"
+                />
               </div>
 
               <div
@@ -173,10 +164,7 @@ export default function CardStack() {
                   </div>
                   <Dialog>
                     <DialogTrigger asChild>
-                      <button
-                        className="text-sm cursor-pointer flex items-center gap-2 font-medium group text-muted-foreground hover:text-white"
-                        disabled={card.dev}
-                      >
+                      <button className="text-sm cursor-pointer flex items-center gap-2 font-medium group text-muted-foreground hover:text-white">
                         View
                         <ArrowRight
                           size={13}
@@ -191,7 +179,7 @@ export default function CardStack() {
                             alt="project-image"
                             src={card.imageUrl ?? ""}
                             fill
-                            className="object-contain w-full h-full"
+                            className="object-cover w-full h-full"
                           />
                         </div>
                         <DialogTitle className="my-4">{card.title}</DialogTitle>
